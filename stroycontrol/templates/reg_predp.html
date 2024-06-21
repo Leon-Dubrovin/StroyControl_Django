@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>СтройКонтроль</title>
+    </head>
+    <body>
+    {% block content %}
+
+        <a href="/kab/{{ user.id }}">Личный кабинет </a>
+        <div class="row mt-3">
+            <div class="col">
+                <hr>
+                <h4> Вход выполнен: {{ user.first_name }}</h4>
+            </div>
+        </div>
+     <div>
+        <details>
+            <summary>
+                Фильтрация
+            </summary>
+            <form method="POST" action="/filter_zakazchik/{{user.id}}">
+                {% csrf_token %}
+                <p>
+                    <label>Введите наименование заказчика</label><br>
+                    <input type="text"   name = "Zakazchik" >
+                </p>
+                <input type="submit"  value = "Фильтровать" >
+            </form>
+            <form method="POST" action="/filter_podryadchik/{{user.id}}">
+            {% csrf_token %}
+                <p>
+                    <label>Введите наименование подрядчика</label><br>
+                    <input type="text"  name = "Podryadchik" >
+                </p>
+                <input type="submit"  value = "Фильтровать" >
+            </form>
+            <form method="POST" action="/filter_predp_date/{{user.id}}">
+                {% csrf_token %}
+                <p>
+                    <label>Введите максимальную дату выдачи предписания</label><br>
+                    <input type="date"  name = "predp_date">
+                </p>
+                <input type="submit"  value = "Фильтровать" >
+            </form>
+        </details>
+     </div>
+        {% if predpisania %}
+            <table>
+                <tr>
+                    <th>Заказчик</th> <th>Подрядчик</th> <th>Номер предписания</th>
+                    <th>Описание нарушения</th> <th>Ссылка на нормативный документ</th>
+                    <th>Дата выдачи предписания</th> <th>Установленный срок исполения</th>
+                    <th>ФИО представителя СК</th>
+                </tr>
+               {% for item in predpisania %}
+               <tr>
+                   <td align="center">{{item.Zakazchik}}</td>
+                   <td align="center">{{item.Podryadchik}}</td>
+                   <td align="center">{{item.Id}}</td>
+                   <td align="center">{{item.Narushenie}}</td>
+                   <td align="center">{{item.NTD}}</td>
+                   <td align="center">{{item.predp_date|date:"d.m.Y"}}</td>
+                   <td align="center">{{item.exp_date|date:"d.m.Y"}}</td>
+                   <td align="center">{{item.SK_FIO}}</td>
+               </tr>
+               {% endfor %}
+            </table>
+        {% endif %}
+
+    {% endblock %}
+
+    </body>
+
+</html>

@@ -1,0 +1,41 @@
+
+
+.create-line {
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 1vw;
+  }
+
+  .contact-container_big{
+    display: flex; /* используем flexbox */
+    margin-inline: auto;
+    margin-bottom: 1vw;
+    white-space: nowrap;
+    width: auto;
+    justify-content: center; /* выравниваем элементы по горизонтали */
+    overflow: hidden; /* запрещаем перенос элементов на новую строку */
+    transform: scale(calc(var(--device-width) / 1920));
+    background-color: #36393d;
+  }
+
+  .contact-container_smal{
+    display: flex; /* используем flexbox */
+    align-items: center; /* выравниваем элементы по вертикали */
+    justify-content: center; /* выравниваем элементы по горизонтали */
+    padding:0 5vw;
+    margin: 1vw;
+    transform: scale(calc(var(--device-width) / 1920));
+  }
+  
+  .contact-container_smal img{
+    width: 2vw; /* установить ширину в 50% ширины экрана */
+    height: auto; /* автоматически подстроить высоту для сохранения пропорций */
+  }
+
+  .text-contact{
+    font-weight: 500; 
+    font-size: 1.5vw; /* Размер текста */
+    padding: 1vw;
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+    color: white;
+  }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технический аудит</title>
+    <link rel="stylesheet" href="/static/css/about.css" />
+    <link rel="stylesheet" href="/static/css/nav.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+{% block content %}
+  <header class="header">
+    <script src="/static/scripts/nav.js"></script>
+    <script>nav_main("TA");</script>
+
+    <div class="lang-contant parent-element">
+    </div>
+  </header>
+  <div class="container">
+    <p class="title">Технический аудит незавершённого строительства</p>
+    <div class="content">
+      <div class="elements_discipline">
+        <article>
+          <p>Технический аудит незавершённого строительства — это процесс оценки качества и соответствия строительных работ, а также финансовых и юридических аспектов проекта на определённом этапе его реализации. Цель такого аудита — выявить потенциальные риски, проблемы и отклонения от утверждённых стандартов и проектной документации.</p>
+          <h2>Основные задачи технического аудита включают:</h2>
+          <ul>
+            <li><strong>Анализ проектной документации:</strong> Проверка наличия всех необходимых документов, их актуальности и соответствия действующим нормам.</li>
+            <li><strong>Оценка качества строительства:</strong> Изучение использованных материалов, технологий и методов работы на соответствие стандартам качества.</li>
+            <li><strong>Финансовый контроль:</strong> Анализ затрат на строительство, сравнение фактических расходов с бюджетом проекта.</li>
+            <li><strong>Юридическая проверка:</strong> Убедиться в наличии всех разрешений, лицензий и других юридических документов, необходимых для строительства.</li>
+            <li><strong>Оценка сроков выполнения работ:</strong> Сравнение плановых и фактических сроков строительства, выявление причин задержек.</li>
+          </ul>
+          <p>Технический аудит помогает заказчику или инвестору получить объективную картину состояния строительства, принять меры для исправления выявленных недостатков и оптимизировать дальнейшие инвестиции в проект. Это важный инструмент управления качеством и рисками на всех этапах строительства.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/static/scripts/footer.js"></script>
+{% endblock %}
+</body>
+</html>

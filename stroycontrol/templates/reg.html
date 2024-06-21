@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>СтройКонтроль</title>
+</head>
+<body>
+    <form method="POST" action="user_create/">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Send" >
+</form>
+</body>
+</html>
